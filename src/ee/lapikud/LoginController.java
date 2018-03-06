@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class Controller {
+public class LoginController {
 
     @FXML public TextField server;
     @FXML public TextField username;

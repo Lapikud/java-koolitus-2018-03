@@ -16,12 +16,12 @@ public class Client extends WebSocketClient {
     @Override
     public void onOpen(ServerHandshake serverHandshake) {
         System.out.println("Connected!");
-        this.main.chat.showMessage("Connected!");
+        this.main.chatController.showMessage("Connected!");
     }
 
     @Override
     public void onMessage(String s) {
-        this.main.chat.showMessage(s);
+        this.main.chatController.showMessage(s);
     }
 
     @Override

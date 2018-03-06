@@ -1,7 +1,6 @@
 package ee.lapikud;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,15 +12,15 @@ import java.net.URI;
 public class Main extends Application {
 
     private Stage primaryStage;
-    public Chat chat;
+    public ChatController chatController;
     public Client client;
     public String username;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root = loader.load();
-        loader.<Controller>getController().setMain(this);
+        loader.<LoginController>getController().setMain(this);
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
@@ -31,8 +30,8 @@ public class Main extends Application {
     public void showChat() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("chat.fxml"));
         Parent root = loader.load();
-        this.chat = loader.<Chat>getController();
-        this.chat.setMain(this);
+        this.chatController = loader.<ChatController>getController();
+        this.chatController.setMain(this);
         primaryStage.setScene(new Scene(root));
     }
 
